@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="01" author="aguilar">
+
+        <createTable tableName="prices">
+            <column name="price_list" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="brand_id" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="start_date" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="end_date" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="product_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+            <column name="priority" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="price" type="double">
+                <constraints nullable="true"/>
+            </column>
+            <column name="currency" type="varchar(10)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_update" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_update_by" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="02" author="aguilar">
+        <createSequence sequenceName="PRICES_SEQ" incrementBy="1" startValue="5"/>
+    </changeSet>
+
+</databaseChangeLog>

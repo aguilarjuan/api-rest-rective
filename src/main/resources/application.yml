@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: admin
+    url: jdbc:h2:mem:zara
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:/liquibase/changelog/changelog-master.xml
+
+cron:
+  expression: 0 0 12 1/1 * ?
+
